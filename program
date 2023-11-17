@@ -1,0 +1,82 @@
+#include<stdio.h>
+
+int main()
+{
+    struct student
+    {
+        char students[25];
+        int role_number;
+        int age;
+    }s[3];
+    int sn,i,role_number,j;
+    for(i=1;i<=3;i++)
+    {
+        printf("enter the student name:\n");
+        scanf("%s",&s[i].students);
+        printf("enter your role number:\n");
+        scanf("%d",&s[i].role_number);
+        printf("enter your age:\n");
+        scanf("%d",&s[i].age);
+        
+    }
+    printf("eligible students\n");
+    printf("-----------------------------------\n");
+    printf(" sn   student   age\n");
+    printf("------------------------------------\n");
+    sn=1;
+    for(i=1;i<=3;i++)
+    {
+        if(role_number%2!=0)
+        {
+            printf("your seat alloted in ground floor");
+            printf("%d   %s   %d",sn,s[i].students,s[i].age);
+            sn++;
+            
+        }
+    }
+    printf("0- not able to sit");
+    printf("1 - you are request to sit");
+    printf("groundfloor seat arrangement");
+    for(i=0;i<5;i++){
+        for(j=0;j<5;j++)
+        {
+            if(i%2==0){
+                printf("o");
+            }
+                else{
+                    printf("1");
+                }
+            
+        }
+    }
+    
+
+    sn=1;
+    for(i=1;i<=3;i++)
+    {
+        if(role_number%2==0)
+        {
+            printf("your seat alloted in first floor");
+            printf("%d   %s   %d",sn,s[i].students,s[i].age);
+            sn++;
+        }
+        
+    }
+    printf("first floor arragement");
+        for(i=0;i<5;i++)
+        {
+        for(j=0;j<5;j++)
+        {
+            if(i%2==0)
+            {
+                printf("o");
+            }
+                else
+                {
+                    printf("1");
+                }
+            
+        }
+        }
+}
+    
