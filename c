@@ -4,16 +4,16 @@ int main()
     struct student
     {
         char students[25];
-        int role_number;
+        int roll_number;
         int age;
     }s[2];
     int sn,i,j;
     for(i=1;i<=2;i++)
     {
         printf("enter the student name:\n");
-        scanf("%s",&s[i].students);
-        printf("enter your role number:\n");
-        scanf("%d",&s[i].role_number);
+        scanf("%c",&s[i].students);
+        printf("enter your roll number:\n");
+        scanf("%d",&s[i].roll_number);
         printf("enter your age:\n");
         scanf("%d",&s[i].age);
         
@@ -26,7 +26,7 @@ int main()
     
     for(i=1;i<=2;i++)
     { 
-        if(s[i].role_number%2!=0)
+        if(s[i].roll_number%2!=0)
         {
         
             printf("%d   %s   %d \n",sn,s[i].students,s[i].age);
@@ -47,11 +47,11 @@ int main()
         {
             if(j%2==0)
             {
-              printf("1");
+              printf("1\t");
             }
             else
             {
-              printf("0");
+              printf("0\t");
             }
         }  
         printf("\n");
@@ -62,7 +62,7 @@ int main()
     sn=1;
     for(i=1;i<=2;i++)
     {
-        if(s[i].role_number%2==0)
+        if(s[i].roll_number%2==0)
         {
             
             printf("%d   %s   %d \n",sn,s[i].students,s[i].age);
@@ -80,11 +80,11 @@ int main()
         {
             if(j%2==0)
             {
-                printf("1");
+                printf("1\t");
             }
             else
                 {
-                    printf("0");
+                    printf("0\t");
                 }
             
         }
