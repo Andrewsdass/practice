@@ -1,1 +1,21 @@
-hello everyone
+#include <stdio.h>
+
+int main() {
+    int add(int*,int*);
+    int a,b,r;
+    printf("enter a= ",a);
+    scanf("%d",&a);
+    printf("enter b=",b);
+    scanf("%d",&b);
+    r=add(&a,&b);
+    printf("%d",r);
+    
+}
+
+    int add(int *x,int *y)
+    {
+        int sum;
+        sum = *x+*y;
+        return (sum);
+    }
+    
