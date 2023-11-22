@@ -26,7 +26,7 @@ void insert_date_begin(int val)
         newnode->next=head;
         head=newnode;
     }
-    printf("inserting %d at begining ",&val);
+    printf("inserting %d at begining \n",val);
     
 }
 
@@ -37,9 +37,9 @@ void display(){
     }
     node* temp=head;
     printf("elements in the list are:");
-    if(temp!=NULL)
+    while(temp!=NULL)
     {
-        printf("%d",temp->data);
+        printf("%d\t\t",temp->data);
          temp=temp->next;
          
     }
@@ -78,13 +78,13 @@ void delete_pos(int pos)
     {
         printf("empty");
     }
-    if(pos==1)
+    if(pos==0)
     {
         head=head -> next;
-        printf("deleted %d",temp -> next);
+        printf("deleted %d",temp -> data);
         free(temp);
     }
-    if(pos==0)
+    if(pos==1)
     {
     for(i=1;i<=pos;i++)
     {
@@ -95,7 +95,7 @@ void delete_pos(int pos)
             printf("invalid position \n");
         }
         pre->next=temp->next;
-        printf("deleted %d",temp->next);
+        printf("deleted %d",temp -> data);
         free(temp);
         
     }
@@ -103,15 +103,32 @@ void delete_pos(int pos)
 }
 }
 
+void reverse()
+{
+   node* prev=NULL;
+   node* current=head;
+   node* next=head->next;
+   while(current!=NULL)
+   {
+       next=current->next;
+       current->next=prev;
+       prev=current;
+       current=next;
+       
+   }
+   head=current;
+}
+
 void main()
 {
     int choice,data,pos;
     while(1){
-    printf("1.insert at begining :");
-    printf("\n2.display :");
-    printf("\n3.insert at specified position :");
-    printf("\n4.delete at specified position :");
-    printf("\n5.exit:");
+    printf("\n1.insert at begining ");
+    printf("\n2.display ");
+    printf("\n3.insert at specified position ");
+    printf("\n4.delete at specified position ");
+    printf("\n5.reverse");
+    printf("\n6.exit");
     printf("\n________________________________\n");
     printf("enter the choice:");
     scanf("%d",&choice);
@@ -150,7 +167,11 @@ void main()
         delete_pos(pos);
         break;
         
-        case 5:printf("exit");
+        case 5:reverse();
+        display();
+        break;
+        
+        case 6:printf("exit");
         break;
         
         default: printf("invalid number:");
